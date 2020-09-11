@@ -1,0 +1,883 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+
+\usetikzlibrary{shapes ,arrows}
+
+
+\title{TP N$^\circ$2 \\ Sistemas controlados por computadora}
+\author{Saez, Lautaro Andres}
+\date{}
+
+\newcommand{\laplaceTransform}[1]{\mathcal{L}\left\{ #1 \right\}}
+\newcommand{\syseq}[1]{ \left\{  
+                            \begin{array}{c}
+                                #1
+                            \end{array}
+                        \right. }
+
+\begin{document}
+    \maketitle
+  
+
+    \tikzstyle{block} = [draw, fill=blue!20, rectangle, 
+    minimum height=3em, minimum width=6em]
+    \tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+    \tikzstyle{input} = [coordinate]
+    \tikzstyle{output} = [coordinate]
+    \tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+    \tikzstyle{big-block} = [draw, rectangle, minimum height= 12em, minimum width= 24em]
+
+    \section{Ejercicio 1}
+
+    \subsection{a)}
+
+    El sistema para discretizar en este caso es 
+
+    \begin{equation}
+        \left\{
+            \begin{array}{c}
+                \dot{x} = \underbrace{
+                        \begin{pmatrix}
+                            0 & 1 \\
+                            -1 & 0 
+                        \end{pmatrix}
+                        }_{A} x +
+                        \underbrace{
+                            \begin{pmatrix}
+                                0 \\ 1
+                            \end{pmatrix}
+                        }_{B} u \\ 
+                y = \underbrace{
+                    \begin{pmatrix}
+                        0 & 1
+                    \end{pmatrix}
+                }_{C} x
+            \end{array}
+        \right.
+    \end{equation}
+
+    Para discretizar el sistema primero debemos calcular $e^{At}$, en general utilizaremos la transforma inversa de Laplace salvo que la matriz $A$ sea 
+    diagonalizable, para ello calculo los autovalores de $A$
+
+    \begin{equation}
+        p(\lambda) = |A-\lambda I| = \lambda^2 + 1
+    \end{equation}
+
+    Cuyas raices son $\lambda \in \{ \pm j \}$. Luego calcularemos los espacios asociados a cada autovalor utilizando la siguiente relación 
+
+    \begin{equation}
+        (A-\lambda_i I) 
+        \begin{pmatrix}
+            x \\ y    
+        \end{pmatrix}
+        = 
+        \begin{pmatrix}
+            0 \\ 0
+        \end{pmatrix}
+    \end{equation}
+
+    Remplazando 
+
+    \begin{equation}
+        x = \mp j y
+    \end{equation}
+
+    Para armar la matriz de transformación que diagonalice a $A$ elijo 1 autovector de cada espacio. Por lo tanto
+
+    \begin{equation}
+        T = \begin{bmatrix}
+            1 & 1 \\
+            j & -j
+        \end{bmatrix}
+    \end{equation}
+
+    Ahora es posible calcular $e^{At}$ como 
+
+    \begin{equation}
+        e^{At} = T e^{\Lambda t} T^{-1}
+    \end{equation}
+
+    Donde $\Lambda$ es una matriz diagonal compuesta por lo autovalores de $A$. Realizando las cuentas se obtiene 
+
+    \begin{equation}
+        e^{At} = \frac{1}{2} 
+        \begin{bmatrix}
+            \cos{t} & \sin{t} \\ 
+            -\sin{t} & \cos{t} 
+        \end{bmatrix}
+    \end{equation}
+
+    Finalmente las matrices discretizadas son 
+
+    \begin{equation}
+        \begin{array}{c}
+            \Phi = e^{Ah} \\ 
+        \Gamma = \int_0^h e^{Al}dl B
+        \end{array}
+    \end{equation}
+
+    Donde $\Phi$ es la versión discretizada de $A$, y $\Gamma$ la versión discretizada $B$, las matrices $C$ y $D$ no se ven modificadas.
+
+    Por lo que el sistema discretizado es 
+
+    \begin{equation}
+        x[k+1] = 
+        \underbrace{
+            \frac{1}{2}
+            \begin{bmatrix}
+                \cos{h} & \sin{h} \\ 
+                -\sin{h} & \cos{h}   
+            \end{bmatrix}
+        }_{\Phi} x[k] + 
+        \underbrace{
+            \frac{1}{2}
+            \begin{bmatrix}
+                1 - \cos{h} \\ 
+                \sin{h}
+            \end{bmatrix}
+        }_{\Gamma} u[k]
+    \end{equation}
+
+    \subsection{b)}
+        El sistema a tratar es 
+
+        \begin{equation}
+            \ddot{y} + 3 \dot{y} + 2 y = \dot{u} + 3u
+        \end{equation}
+
+        Aplicando la transformada de Laplace obtenemos 
+
+        \begin{equation}
+            (s^{2} + 3s + 2)Y(s) = (s + 3)U(s)
+        \end{equation}
+
+        Por lo tanto la transferencia $G(s)$ es 
+
+        \begin{equation}
+            G(s) = \frac{s+3}{s^2 + 3s + 2}
+        \end{equation}
+
+        Si descrizamos con un mantenedor de orden cero la transferencia discreta se puede escribir como 
+
+        \begin{equation}
+            H(z) = (1-z^{-1})\mathcal{Z}\left\{ \left. \laplaceTransform{ \frac{G(s)}{s} }\right|_{t=hk} \right\}
+        \end{equation}
+
+        Como primer paso calcularemos $G(s)/s$ por lo que tenemos 
+
+        \begin{equation}
+            \frac{G(s)}{s} = \frac{s+3}{( s+2 )(s+1)s} = \frac{A}{s} + \frac{B}{s+2} + \frac{C}{s+1}
+        \end{equation}
+
+        De la ecuación anterior surgue el siguiente sistemas de ecuaciones 
+
+        \begin{equation}
+            \left\{
+                \begin{array}{c}
+                    A+B+C = 0 \\
+                    3A + B + 2C = 1 \\
+                    2A = 3
+                \end{array}    
+            \right.
+            \Leftrightarrow
+            \syseq{
+                A = \frac{3}{2} \\ 
+                B = \frac{1}{2} \\
+                C = -2
+            }   
+        \end{equation}
+
+        Antitransformando la respuesta al escalon obtenemos 
+
+        \begin{equation}
+            q(t) = \frac{1}{2} \left( 3 + e^{-2t} - 4e^{-t} \right)\mu(t)
+        \end{equation}
+
+        La versión discretizada que se obtiene es 
+
+        \begin{equation}
+            q[k] = \frac{1}{2} \left( 3 + \alpha_0^k - 4 \alpha_1^k \right) \mu[k], \alpha_i = e^{-(2 - i)h}
+        \end{equation}
+
+        Finalmente si transformamos la expresión anterior 
+
+        \begin{equation}
+            G(z) = \frac{( 1 - z^{-1} )}{2} 
+            \left( 
+                \frac{3}{1 - z^{-1}} 
+                + \frac{1}{1 - \alpha_0z^{-1}}
+                - \frac{4}{1 - \alpha_1z^{-1}}
+            \right)
+        \end{equation}
+
+        Al trabajar la expresión anterior obtenemos 
+
+        \begin{equation}
+            \syseq{
+                G(z) = \frac{1}{2}\frac{az + b}{z^2 - ( \alpha_0 + \alpha_1 )z + \alpha_0\alpha_1}\\
+                a=\alpha_0 -4\alpha_1+3\\
+                b=3\alpha_{-1}-4\alpha_0+\alpha_1
+            }
+        \end{equation}
+
+    \subsection{c)}
+    
+        En este inciso el sistema esta descripto por 
+
+        \begin{equation}
+            \dddot{ y } = u
+        \end{equation}
+
+        Realizando el mismo procedimiento que en el inciso anterior se obtiene 
+
+        \begin{eqnarray}
+            \left\{
+                \begin{array}{c}
+                    \dot{x} = 
+                    \begin{bmatrix}
+                        0 & 1 & 0 \\
+                        0 & 0 & 1 \\
+                        0 & 0 & 0 \\
+                    \end{bmatrix} x +
+                    \begin{bmatrix}
+                        0 \\ 0 \\ 1
+                    \end{bmatrix} u\\ 
+                    y = 
+                        \begin{bmatrix}
+                            1 & 0 & 0
+                        \end{bmatrix} x
+                \end{array}
+            \right.
+        \end{eqnarray}
+
+        Por simple inspección visual se puede determinar que $0$ es polo triple, al calcular el espacio asoaciado a dicho autovalor 
+        se obtiene que es de dimensión 1, por lo tanto no es posible diagonalizar a $A$, por ello en este caso utilizaremos la transferencia de Laplace para calular
+        $e^{At}$
+
+        \begin{eqnarray}
+            \mathcal{L} \{ e^{At} \} = (sI - A)^{-1}
+        \end{eqnarray}
+
+        Por lo tanto 
+
+        \begin{eqnarray}
+            \mathcal{L} \{ e^{At} \} = 
+            \begin{bmatrix}
+                s & -1 & 0 \\
+                0 & s & -1 \\
+                0 & 0 & s    
+            \end{bmatrix}^{-1}
+        \end{eqnarray}
+
+        Una forma posible de calular la inversa es utilizando la adjunta, donde se obtiene 
+
+        \begin{eqnarray}
+            \mathcal{L} \{ e^{At} \} = 
+            \begin{bmatrix}
+                s^{-1} & s^{-2} & s^{-3} \\ 
+                0   & s^{-1} & s^{-2} \\ 
+                0 & 0 & s^{-1}
+            \end{bmatrix}
+        \end{eqnarray}
+
+        Antitransofrando 
+
+        \begin{eqnarray}
+            e^{At} = \begin{bmatrix}
+                1 & t & \frac{1}{2}t^2 \\ 
+                0 & 1 & t \\
+                0 & 0 & 1 
+            \end{bmatrix}
+        \end{eqnarray}
+
+
+        Para la matriz $\Gamma$ realizaremos el mismo producto que en el inciso $b)$ con la finalidad de simplificar cuentas 
+
+        \begin{eqnarray}
+            e^{At}B = 
+            \begin{bmatrix}
+                h^2 \\ h \\ 1     
+            \end{bmatrix}
+        \end{eqnarray}
+
+
+        Por lo tanto 
+
+        \begin{eqnarray}
+            \begin{array}{c}
+                \Phi = 
+                \begin{bmatrix}
+                    1 & h & \frac{1}{2}h^2 \\ 
+                    0 & 1 & h \\
+                    0 & 0 & 1 
+                \end{bmatrix} \\ 
+                \Gamma = 
+                \begin{bmatrix}
+                    \frac{1}{6} t^{3} \\ \frac{1}{2} t^{2} \\ t
+                \end{bmatrix}
+            \end{array}
+        \end{eqnarray}
+
+    \section{Ejercicio 2}
+
+        Un integrador doble puede ser escrito como 
+
+        \begin{equation}
+            \ddot{ y } = u
+        \end{equation}
+
+        Al pasarlo a variables de estado se obtiene 
+
+        \begin{equation}
+            \left\{
+                \begin{array}{c}
+                    \dot{x} = 
+                        \begin{bmatrix}
+                            0 & 1 \\ 
+                            0 & 0
+                        \end{bmatrix} x + 
+                        \begin{bmatrix}
+                            0 \\ 1
+                        \end{bmatrix} u
+                    \\ 
+                    y = \begin{bmatrix}
+                        1 & 0
+                    \end{bmatrix} x
+                \end{array}
+            \right.
+        \end{equation}
+
+        Para expresar al sistema en su forma canonica controlable primero debemos discretizar el mismo. Pero
+        al igual que el inciso 1-c, el cual es un integrador triple, no es posible diagonalizar la matriz $A$, por lo tanto recuriremos al calculo mediante la transfromada de Laplace 
+
+        \begin{equation}
+            \laplaceTransform{e^{At}} = 
+                \begin{bmatrix}
+                    s & -1 \\ 
+                    0 & s 
+                \end{bmatrix}^{-1}=
+                \begin{bmatrix}
+                    s^{-1} & s^{-2} \\ 
+                    0 & s^{-1}
+                \end{bmatrix}
+        \end{equation} 
+
+        Por lo tanto 
+
+        \begin{equation}
+            e^{At} = 
+                \begin{bmatrix}
+                    1 & t \\
+                    0 & 1
+                \end{bmatrix}
+        \end{equation}
+
+        Finalmente se tiene que 
+
+        \begin{equation}
+            \begin{array}{c}
+                \Phi = 
+                    \begin{bmatrix}
+                        1 & h \\
+                        0 & 1
+                    \end{bmatrix} \\ 
+                \Gamma = 
+                    \begin{bmatrix}
+                        \frac{1}{2} h^2 \\ h
+                    \end{bmatrix}
+            \end{array}
+        \end{equation}
+
+        Por lo tnto 
+
+        \begin{equation}
+            W_c = \frac{1}{2} 
+            \begin{bmatrix}
+                h^2 & 3h^2 \\ 
+                2h & 2h
+            \end{bmatrix}
+        \end{equation}
+
+        El determinante de la matriz $W_c$ que se obtiene es 
+
+        \begin{equation}
+            |W_c| = -h^3
+        \end{equation}
+
+        El cual es simpre distinto de $0$ salvo que $h=0$, pero si intrepretamos $h$ como el periodo de muestro del sistema este siempre debe ser mayor a $0$. Por lo tanto 
+        siempre es posible escribir al sistema en su forma canonica controlable.
+
+        Ahora sabemos que las matrices $\Gamma$ y $\Phi$ en forma canocia deberían ser de la forma 
+
+        \begin{equation}
+            \begin{array}{c}
+                \Phi^\prime = 
+                    \begin{bmatrix}
+                        2 & -1 \\ 
+                        1 & 0
+                    \end{bmatrix}\\
+                \Gamma^\prime = 
+                    \begin{bmatrix}
+                        1 \\ 0
+                    \end{bmatrix}
+            \end{array}
+        \end{equation}
+
+        Si planteamos la transformacion $z[k] = Tx[k]$, es posible encontrar las siguientes relaciones 
+
+        \begin{equation}
+            \syseq{
+                z[k+1] = T^{-1}\Phi T z[k] + T^{-1}\Gamma u[k] \\ 
+                y[k] = C T z[k]    
+            }
+        \end{equation}
+
+        Luego 
+
+        \begin{equation}
+            \syseq{
+                T^{-1}\Phi T = \Phi^\prime \\ 
+                T^{-1}\Gamma = \Gamma^\prime
+            }
+        \end{equation}
+
+        Con la finalidad de no expresar la matriz $T^{-1}$ ya que puede ser un poco engorroso y sabiendo que existe $T$, es decir, 
+        la inversa de $T^{-1}$, podemos expresar el sistema anterios como 
+
+        \begin{equation}
+            \syseq{ 
+                \Phi T = T \Phi^\prime \\
+                \Gamma = T \Gamma^\prime
+            }
+        \end{equation}
+
+        Luego proponemos 
+
+        \begin{equation}
+            T = 
+                \begin{bmatrix}
+                    a & b \\ 
+                    c & d
+                \end{bmatrix}
+        \end{equation}
+
+        Y realizando los productos matriciales obtenemos 
+
+        \begin{equation}
+            \syseq{
+                \begin{bmatrix}
+                    a + hc & b + hd \\
+                    c & d
+                \end{bmatrix} = 
+                \begin{bmatrix}
+                    2a+b & -a \\ 
+                    2c+d & -c
+                \end{bmatrix} \\
+                \begin{bmatrix}
+                    h^2/2 \\ 
+                    h
+                \end{bmatrix} = 
+                \begin{bmatrix}
+                    a \\
+                    c
+                \end{bmatrix}
+            }
+        \end{equation}
+
+        Por lo que se tienen las siguientes ecuaciones 
+
+        \begin{equation}
+            \syseq{
+                a = h^2/2 \\ 
+                b = h \\
+                a + hc = 2a + b \\
+                b+hd = -a \\
+                c=2c+d \\
+                d = -c
+            }
+        \end{equation}
+
+        Al resolver el sistema de ecuacionesanterior se obtiene 
+
+        \begin{equation}
+            a = \frac{h^2}{2}, b = \frac{h^2}{2}, c=h, d=-h
+        \end{equation}
+
+        Por lo tanto 
+
+        \begin{equation}
+            T = \frac{h}{2}
+                \begin{bmatrix}
+                    h & h \\
+                    2 & -2 
+                \end{bmatrix}
+        \end{equation}
+
+    \section{Ejercicio 3}
+
+    El sistema esta descripto por 
+
+    \begin{equation}
+        \left\{
+            \begin{array}{c}
+                \dot{x} = -ax + bu \\
+                y = cx
+            \end{array}    
+        \right.
+    \end{equation}
+
+    El polo del sistema es claramente $-a$, si calculamos la transferencia del sistema obtenemos 
+
+    \begin{equation}
+        G(s) = \frac{cb}{s + a}
+    \end{equation}
+
+    \subsection{a)}
+
+    En este caso el calculo de $\Phi$ y $\Gamma$ no tiene mayor complejidad debido a que son escalares, por lo tanto 
+
+    \begin{equation}
+        \left\{
+            \begin{array}{c}
+                \Phi = e^{-ah} \\ 
+                \Gamma = -\frac{b}{a} ( e^{-ah} - 1 )
+            \end{array}
+        \right.
+    \end{equation}
+
+    Por lo tanto la transferencia del sistema discretizada es 
+
+    \begin{equation}
+        H(z) = \frac{c\Gamma}{z-\Phi} = -\frac{cb}{a} \frac{e^{-ah}-1}{z - e^{-ah}}
+    \end{equation}
+
+    Donde el polo del sistema discretizado queda ubicado en $e^{-ah}$. 
+
+    \subsection{b)}
+
+    Como se observo en el inciso anterior la ubicación del polo en función de $h$ queda definido como $e^{-ah}$, por lo tanto 
+    si el sistema continuo es estable podemos observar que el sistema discreto es inestable y viceversa.
+    
+    \subsection{c)}
+
+    De la función $G(s)$ podemos calcular la respuesta al escalon 
+
+    \begin{equation}
+        Y(s) = \frac{G(s)}{s} = \frac{cb}{(s+a)s} 
+    \end{equation}
+
+    Planteando fracciones simples 
+
+    \begin{equation}
+        \frac{cb}{(s+a)s} = \frac{A}{s} + \frac{B}{s+a}
+    \end{equation}
+
+    Por lo que podemos plantear 
+
+    \begin{equation}
+        \left\{
+            \begin{array}{c}
+                A + B = 0 \\
+                Ba = cb
+            \end{array}
+        \right.
+        \Leftrightarrow
+        \left\{
+            \begin{array}{c}
+                A = - \frac{cb}{a} \\ 
+                B = \frac{cb}{a}
+            \end{array}
+        \right.
+    \end{equation}
+
+    Por lo tanto la respuesta es 
+
+    \begin{equation}
+        y(t) = -\frac{cb}{a} ( e^{-at} - 1 ) \mu(t)
+    \end{equation}
+
+    Por otro lado la respuesta en tiempo discreto es 
+
+    \begin{equation}
+        Y(z) = -\frac{cb}{a} \frac{(e^{-ah}-1)z}{(z - e^{-ah})(z-1) } 
+    \end{equation}
+
+    Al plantear fracciones simples
+
+    \begin{equation}
+        \frac{(e^{-ah}-1)z}{(z - e^{-ah})(z-1) } = \frac{A}{z - e^{-ah}} + \frac{B}{z - 1}
+    \end{equation}
+
+    \begin{equation}
+        \left\{
+            \begin{array}{c}
+                A + B = e^{-ah} - 1 \\ 
+                -A - Be^{-ah} = 0
+            \end{array}
+        \right.
+        \Leftrightarrow
+        \left\{
+            \begin{array}{c}
+                A = e^{-ah} \\ 
+                B = -1
+            \end{array}
+        \right.
+    \end{equation}
+
+    Por lo tanto 
+
+    \begin{equation}
+        y[k] = -\frac{cb}{a} ( e^{-ahk} - 1 ) \mu[k-1]
+    \end{equation}
+
+     \begin{figure}[!htb]
+         \centering
+         \includegraphics[width=\textwidth]{Img/3-c.png}
+         \caption{Grafico de la respuesta al escalon del sistema discretizado para diferentes valores de $h$ junto con la respuesta del sistema continuo.}
+         \label{}
+     \end{figure}
+
+    \section{Ejercicio 4}
+
+        Para un filtro FIR de la siguiente forma 
+
+        \begin{equation}
+            \label{eq:ej4}
+            H(z) = \sum_i^n b_{n-i}z^{-i}
+        \end{equation}
+
+        \subsection{a)}
+
+            El orden del sistema es $n$.
+
+        \subsection{b)}
+
+            La forma observable esta definida como 
+
+            \begin{equation}
+                \syseq{
+                    x[k+1] = 
+                        \begin{bmatrix}
+                            -a_1 & 1 & 0 & \cdots & 0 \\
+                            -a_2 & 0 & \ddots & 0 & \cdots \\
+                            \vdots & 0 & \cdots & \ddots & 0\\
+                            -a_n & 0 & \cdots & 0 & 1\\
+                        \end{bmatrix} x[k] + 
+                        \begin{bmatrix}
+                            b_1 \\
+                            b_2 \\ 
+                            \vdots \\ 
+                            b_n
+                        \end{bmatrix}u[k] \\
+                    y[k] = 
+                        \begin{bmatrix}
+                            1 & 0 & \cdots & 0\\
+                        \end{bmatrix}
+                }
+            \end{equation}
+
+            En este caso como no tenemos polos no nulos o no infinitos los coefientes $a_i$ son nulos mientras que los $b_i$ estan dados por la ecuacion \ref{eq:ej4}.
+
+            \begin{equation}
+                \syseq{
+                    x[k+1] = 
+                        \begin{bmatrix}
+                            0 & 1 & 0 & \cdots & 0 \\
+                            0 & 0 & \ddots & 0 & \cdots \\
+                            \vdots & 0 & \cdots & \ddots & 0\\
+                            0 & 0 & \cdots & 0 & 1\\
+                        \end{bmatrix} x[k] + 
+                        \begin{bmatrix}
+                            b_1 \\
+                            b_2 \\ 
+                            \vdots \\ 
+                            b_n
+                        \end{bmatrix}u[k] \\
+                    y[k] = 
+                        \begin{bmatrix}
+                            1 & 0 & \cdots & 0\\
+                        \end{bmatrix}
+                }
+            \end{equation}
+
+    \section{Ejercicio 5}
+
+        En este ejercicio se trabajara con la transferencia 
+
+        \begin{equation}
+            H(z) = \frac{K}{z(z-0.2)(z-0.4)}
+        \end{equation}
+
+        Si retroalimentamos negativamente el sistema se obtiene la siguiente transferencia 
+
+        \begin{equation}
+            G(z) = \frac{K}{z(z-0.2)(z-0.4) + K}
+        \end{equation}
+
+        Por lo tanto el polinomio caracteristo es 
+
+        \begin{equation}
+            z^3 - \frac{3}{5} z^2 + \frac{2}{25} z + K
+        \end{equation}
+
+        Aplicando el criterio de Jury 
+
+        \subsection{Calculo de $a^2_i$}
+
+            \begin{equation}
+                a^3 = a^3_3 / a^3_0 = K
+            \end{equation}
+
+            Luego obtenemos que 
+
+            \begin{equation}
+                a^2_0 = a^3_0 - a^3a^3_3 = 1 - K^2
+            \end{equation}
+
+            \begin{equation}
+                a^2_1 = a^3_1 - a^3a^3_2 = -\frac{3}{5} - \frac{2}{25} K 
+            \end{equation}
+
+           
+
+        \subsection{Calculo de $a^1_i$}
+
+            \begin{equation}
+                a^2 = \frac{a^2_2}{a^2_0} = 
+            \end{equation}
+
+        \begin{table}
+            \centering
+            \begin{tabular}{|c|c|c|c|} 
+                $1$ & $-3/5$ & $2/25$ & K \\
+                $1-K^2$ & $-\frac{15+2K}{25}$ & $\frac{2+15K}{25}$ \\
+                
+            \end{tabular}
+        \end{table}
+
+        \section{Ejercicio 6}
+
+            Para este problema se tiene el siguiente sistema 
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+                    \node [input, name=input] {};
+                    \node [sum, right of=input] (sum) {$+$};
+                    \node [block, right of=sum] (controller) {$Kz^{-n_0}$};
+                    \node [block, right of=controller, node distance=3.5cm] (DAC) {DAC};
+                    \node [block, right of =DAC, node distance=3.5cm] (system) { $\frac{1}{S}$ };
+    
+                    \draw [->] (controller) -- node[name=u] { $U(z)$ } (DAC);
+                    \draw [->] (DAC) -- node[name=u] { $U(s)$ } (system);
+                    \node [output, right of=system] (output) {};
+                    \node [block, below of=DAC] (H) {ADC};
+                    
+                    \draw [draw, ->] (input) -- node {$R(z)$} (sum); 
+                    \draw [->] (sum) -- node {$E(z)$} (controller);
+                    \draw [->] (system) -- node[name=y] {$Y(s)$} (output);
+                    \draw [-] (y)  |- (H);    
+                    \draw [->] (H) -| node[pos=0.99] {$-$} (sum);
+                \end{tikzpicture}
+                \caption{Diagrama del proceso.}
+                \label{}
+            \end{figure}
+
+            Donde $n_0$ es $\tau=n_0h$.
+
+            Es posible pensar al proceso muestreado por un mantenedor de orden cero, dando como resultado
+            
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+                    \node [input, name=input] {};
+                    \node [sum, right of=input] (sum) {$+$};
+                    \node [block, right of=sum] (controller) {$Kz^{-n_0}$};
+                    \node [block, right of =controller, node distance=3.5cm] (system) { $\frac{1}{z-1}$ };
+    
+                    \draw [->] (controller) -- node[name=u] { $U(z)$ } (system);
+                    \node [output, right of=system] (output) {};
+                    \node [output, below of=system] (H) {};
+                    
+                    \draw [draw, ->] (input) -- node {$R(z)$} (sum); 
+                    \draw [->] (sum) -- node {$E(z)$} (controller);
+                    \draw [->] (system) -- node[name=y] {$Y(z)$} (output);
+                    \draw [-] (y)  |- (H);    
+                    \draw [->] (H) -| node[pos=0.99] {$-$} (sum);
+                \end{tikzpicture}
+                \caption{Diagrama del proceso.}
+                \label{}
+            \end{figure}
+
+            Por lo tanto la tranferencia total del sistema retroalimentamo es 
+
+            \begin{equation}
+                H(z) = \frac{K}{z^{n_0+1} - z^{n_0} + K }
+            \end{equation}
+
+            \subsection{a)}
+
+                Para este ejercicio tomaremos $n_0 \in \{0,1\}$.
+
+                \subsubsection{$n_0=0$}
+
+                    En este caso el ecuacion caracterisca del sistema esta dada por 
+
+                    \begin{equation}
+                        P(\lambda) = \lambda + ( K -1 )
+                    \end{equation}
+
+                    Donde el polo esta dado por la ecuacion 
+
+                    \begin{equation}
+                        p = 1 - K
+                    \end{equation}
+
+                    Para un sistema discreto la estabilidad esta dada cuando $|p|<1$, por lo tanto 
+
+                    \begin{equation}
+                        |1 - K| < 1
+                    \end{equation}
+
+                    Por lo cual obtenemos que $K \in ( 0 ; 2 )$
+
+                \subsubsection{$n_0=1$}
+
+                    En este caso el retardo es unitario por lo tanto el polinomio caracteristo esta dado por 
+
+                    \begin{equation}
+                        P(\lambda) = \lambda^2 - \lambda + K
+                    \end{equation}
+
+                    En este caso para calcular cuando el sistema es estable aplicaremos el criterio de Jury
+
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|c|}
+                            \hline $1$ & $-1$ & $K$ \\
+                            \hline $1-K^2$ & $K+1$ & 0 \\
+                            \hline $\frac{(1+K)[ 1 - (K-1)^2 ]}{K-1}$ & 0 & 0\\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+
+                    Por lo que obtenemos que $K \in (0;1)$
+
+
+                Es posible observar que en el segundo caso el rango de $K$ disminuye.
+
+            \subsection{b)}
+
+                En control equivalente seria un proporcional con un retardo de una unidad, siendo la transferencia de la planta 
+
+                \begin{equation}
+                    H(s) = \frac{Ke^{-s}}{s + Ke^{-s}}
+                \end{equation}
+
+        \section{Ejercicio 7}
+
+        
+\end{document} 
