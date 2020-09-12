@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.1)  10 SEP 2020 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.1)  12 SEP 2020 00:50
 entering extended mode
 **/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex
 (/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex
@@ -297,7 +297,26 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box58
 \@float@everytoks=\toks36
 \@floatcapt=\box59
-) (/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+) (/home/lautaro/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/share/miktex-texmf/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/local/share/miktex-texmf/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count276
+\Gm@cntv=\count277
+\c@Gm@tempcnt=\count278
+\Gm@bindingoffset=\dimen196
+\Gm@wd@mp=\dimen197
+\Gm@odd@mp=\dimen198
+\Gm@even@mp=\dimen199
+\Gm@layoutwidth=\dimen256
+\Gm@layoutheight=\dimen257
+\Gm@layouthoffset=\dimen258
+\Gm@layoutvoffset=\dimen259
+\Gm@dimlist=\toks37
+ (/home/lautaro/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg)) (/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -343,12 +362,18 @@ File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen196
+\arrowsize=\dimen260
 )) (/usr/local/share/miktex-texmf/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count276
+\l__kernel_color_stack_int=\count279
 \l__pdf_internal_box=\box80
 ) (/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 
 LaTeX Warning: Label `' multiply defined.
 
@@ -358,66 +383,142 @@ LaTeX Warning: Label `' multiply defined.
 )
 \openout1 = `TP-2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
  ABD: EveryShipout initializing macros (/usr/local/share/miktex-texmf/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
-\scratchdimen=\dimen197
+\scratchcounter=\count280
+\scratchdimen=\dimen261
 \scratchbox=\box81
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count280
-\MPscratchDim=\dimen198
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks38
+\nofMPsegments=\count281
+\nofMParguments=\count282
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count283
+\MPscratchDim=\dimen262
+\MPnumerator=\count284
+\makeMPintoPDFobject=\count285
+\everyMPtoPDFconversion=\toks39
 ) (/usr/local/share/miktex-texmf/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-) [1
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(35.56593pt, 526.376pt, 35.56593pt)
+* v-part:(T,H,B)=(42.67912pt, 717.00946pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=526.376pt
+* \textheight=717.00946pt
+* \oddsidemargin=-36.70406pt
+* \evensidemargin=-36.70406pt
+* \topmargin=-66.59087pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-{/home/lautaro/.miktex/texmfs/data/pdftex/config/pdftex.map}] [2] [3] [4] [5] [6]
-<Img/3-c.png, id=34, 433.62pt x 289.08pt>
+[1
+
+{/home/lautaro/.miktex/texmfs/data/pdftex/config/pdftex.map}] [2] [3] [4]
+<Img/3-c.png, id=28, 433.62pt x 289.08pt>
 File: Img/3-c.png Graphic file (type png)
 <use Img/3-c.png>
-Package pdftex.def Info: Img/3-c.png  used on input line 638.
-(pdftex.def)             Requested size: 345.0pt x 230.01158pt.
- [7] [8 <./Img/3-c.png>]
-Overfull \hbox (29.4785pt too wide) in paragraph at lines 784--785
- [][] 
- []
-
-[9] [10] [11] (/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.aux)
+Package pdftex.def Info: Img/3-c.png  used on input line 641.
+(pdftex.def)             Requested size: 526.376pt x 350.9612pt.
+ [5] [6 <./Img/3-c.png>] [7] [8]
+<Img/7.png, id=48, 289.08pt x 289.08pt>
+File: Img/7.png Graphic file (type png)
+<use Img/7.png>
+Package pdftex.def Info: Img/7.png  used on input line 895.
+(pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
+<Img/7-1.png, id=49, 289.08pt x 289.08pt>
+File: Img/7-1.png Graphic file (type png)
+<use Img/7-1.png>
+Package pdftex.def Info: Img/7-1.png  used on input line 913.
+(pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
+ [9 <./Img/7.png> <./Img/7-1.png>]
+<Img/8-a.png, id=55, 1156.32pt x 1156.32pt>
+File: Img/8-a.png Graphic file (type png)
+<use Img/8-a.png>
+Package pdftex.def Info: Img/8-a.png  used on input line 978.
+(pdftex.def)             Requested size: 526.376pt x 526.37344pt.
+<Img/8-b-rlocus.png, id=56, 289.08pt x 289.08pt>
+File: Img/8-b-rlocus.png Graphic file (type png)
+<use Img/8-b-rlocus.png>
+Package pdftex.def Info: Img/8-b-rlocus.png  used on input line 1000.
+(pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
+ [10]
+<Img/8-b-nyquist.png, id=60, 289.08pt x 289.08pt>
+File: Img/8-b-nyquist.png Graphic file (type png)
+<use Img/8-b-nyquist.png>
+Package pdftex.def Info: Img/8-b-nyquist.png  used on input line 1036.
+(pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
+ [11 <./Img/8-a.png>]
+<Img/8-c-nyquist.png, id=65, 289.08pt x 289.08pt>
+File: Img/8-c-nyquist.png Graphic file (type png)
+<use Img/8-c-nyquist.png>
+Package pdftex.def Info: Img/8-c-nyquist.png  used on input line 1060.
+(pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
+ [12 <./Img/8-b-rlocus.png> <./Img/8-b-nyquist.png>]
+<Img/9-a.png, id=71, 289.08pt x 289.08pt>
+File: Img/9-a.png Graphic file (type png)
+<use Img/9-a.png>
+Package pdftex.def Info: Img/9-a.png  used on input line 1092.
+(pdftex.def)             Requested size: 263.188pt x 263.19994pt.
+ [13 <./Img/8-c-nyquist.png> <./Img/9-a.png>]
+<Img/9-b-nyquist.png, id=78, 289.08pt x 289.08pt>
+File: Img/9-b-nyquist.png Graphic file (type png)
+<use Img/9-b-nyquist.png>
+Package pdftex.def Info: Img/9-b-nyquist.png  used on input line 1122.
+(pdftex.def)             Requested size: 263.188pt x 263.19994pt.
+ [14 <./Img/9-b-nyquist.png>] (/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14645 strings out of 481226
- 315815 string characters out of 2913220
- 562059 words of memory out of 3000000
- 29968 multiletter control sequences out of 15000+200000
+ 15218 strings out of 481226
+ 324306 string characters out of 2913220
+ 579347 words of memory out of 3000000
+ 30521 multiletter control sequences out of 15000+200000
  541310 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,20n,67p,463b,763s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on /home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf (11 pages, 205185 bytes).
+Output written on /home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf (14 pages, 332625 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
