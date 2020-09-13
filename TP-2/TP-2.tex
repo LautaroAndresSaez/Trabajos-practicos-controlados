@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{tikz}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
@@ -1139,8 +1140,218 @@
 
             \begin{equation}
                 \lim_{k \to \infty} e[k] = \lim_{z \to 1} (1 - z^{-1}) \frac{z^2 - z/2}{z^2 - z/2 + K} \frac{z^{-1}}{(1-z^{-1})^2}
-                = \lim_{z \to 1} \frac{(z-1/2)}{(z^2 - z/2 + K)(1-z^{-1})} = 
+                = \lim_{z \to 1} \frac{(z-1/2)}{(z^2 - z/2 + K)(1-z^{-1})} \to \infty
             \end{equation}
     
+            Debido a que la entrada no es acodata y en este caso la salida tambien diverge no es posible determinar el error en 
+            estado estacionario de una rampa.
+
         \subsection{b)}
+
+            En el caso del control integral obtenemos que el error para una rampa esta dado por 
+
+            \begin{equation}
+                \lim_{k \to \infty} e[k] = \lim_{z \to 1} (1 - z^{-1}) \frac{z^2 - 3z/2 + 1/2}{z^2 - 3z/2 + 1/2 + K} \frac{z^{-1}}{(1-z^{-1})^2}
+                = \lim_{z \to 1} \frac{z-1/2}{z^2 -3z/2 + 1/2 + K} = \frac{1}{2K} 
+            \end{equation}
+
+            El error minimo se obtiene para el maximo valor de $K$, en el ejercicio anterior se determino que el maximo valor de $K$ posible es $1/2$. 
+            En ese caso el error obtenido es $1$.
+
+    \section{Ejercicio 11}
+
+        En este caso la transferencia del proceso esta descripta por 
+        
+        \begin{equation}
+            H(z) = \frac{5}{z( 5z + 2 )}
+        \end{equation}
+
+        \subsection{a)}
+
+            Si controlamos con un proporcional la transferencia a lazo abierto que se obtiene es 
+
+            \begin{equation}
+                H_1(z) = \frac{5K}{z(5z+2)}
+            \end{equation}
+
+            Como ambos polos se encuentran dentro del circulo unitario entonces $P_0=0$, por lo tanto necesitaremos que $N=0$ para 
+            que el sistema a lazo cerrado sea estable. Calcularemos las intersecciones de $H_1(z)$ con el eje real. 
+
+            \begin{equation}
+                \arg \{ H_1(e^{j\omega}) \} = k\pi, k \in \mathbb{R^+}
+            \end{equation}
+
+            Por lo tanto 
+
+            \begin{equation}
+                \arg \{ 5 \} + \arg\{K \}  - \arg\{ 5e^{2j\omega} + 2e^{j\omega} \} = k\pi
+            \end{equation}
+
+            En el caso de que $K>0$ entonces 
+
+            \begin{equation}
+                - \arg\{ 5\sin{2\omega} + 2\sin{\omega}+ 5\cos{2\omega} + 2\cos{\omega} \} = k\pi
+            \end{equation}
+
+            De la ecuación podemos determiar que las intercciones se daran cuando $5\sin{2\omega} + 2\sin{\omega}= 0$. 
+
+            \begin{equation}
+                5\sin{ 2\omega } + 2\sin{ \omega } = 0
+            \end{equation}
+
+            Existen soluciones triviales a esta ecuaciones y son cuando $\omega$ es un multiplo de $\pi$, como la el intervalo de interes esta 
+            dado entre $[0;\pi]$ nos quedaremos con 2 soluciones triviales $\omega \in \{ 0, \pi \}$. Por ultimo nos queda determinar la existencia de 
+            otras soluciones 
+            
+            \begin{equation}
+                \sin\{ \omega \}( 10\cos{ \omega } + 2 ) = 0 \Leftrightarrow
+                10\cos{ \omega } = -2 \Leftrightarrow
+                \cos{ \omega } = -\frac{1}{5} \Leftrightarrow
+                \omega \approx 1.77 rad
+            \end{equation}
+
+            Si aluamos $H_1(z)$ obtendremos los valores de las intercciones, las cuales se dan en 
+
+
+            \begin{table}[H]
+                \centering 
+                \begin{tabular}{|c|c|c|c|}
+                    \hline $\omega$ & $0$ & $\pi$ & $\arccos{-\frac{1}{5}}$ \\ 
+                    \hline $H(e^{j\omega})$ & $\frac{5K}{7}$ & $\frac{5K}{3}$ & $-K$ \\
+                    \hline
+                \end{tabular}
+            \end{table}
+
+            En la figura \ref{fig:11-nyquist} se observa la curva de Nyquist para $K=1$ y se observan las 3 intersecciones calculadas anteriormente.
+            Luego para que $N=0$ el punto $(-1;0)$ no debe estar contenido en el interior de la curva por lo tanto podemos plantear que 
+
+            \begin{equation}
+                \frac{5K}{7} = -1 \land \frac{5K}{3} = -1 \land -K = -1 \Leftrightarrow
+                K = -\frac{7}{5} \land K = -\frac{3}{5} \land K = 1
+            \end{equation}
+
+            Luego estos son los valores donde cada una de las intersecciones cae sobre el $-1$, por lo tanto para que nunca se encierre dicho 
+            valor debemos excluir los intervalor que hagan que la interseccion quede a la izquierda del $-1$, en los 2 primeros casos se da cuando 
+            $K$ es menor al valor limite, mientras que en el ultimo caso se da cuando $K$ es mayor al valor limite, por lo que obtenemos que $K \in (-3/5;1)$.
+            En caso de utilizar $K>0$ tendremos que $K \in (0;1)$.
+
+            \begin{figure}[!htb]
+               \centering
+               \includegraphics[width=.5\textwidth]{Img/11-nyquist.png}
+               \caption{Diagrama de Nyquist de $H_1(z)$ para $K=1$.}
+               \label{fig:11-nyquist}
+            \end{figure}
+
+        \subsection{b)}
+
+            Como para $K=0.5$ el sistema es estable podemos calcular el error en estado estacionario. El cual se puede determinar utilizando la transformada $Z$.
+
+            \begin{equation}
+                \lim_{k \to \infty} e[k] = \lim_{z \to 1} (1-z^{-1}) \frac{1}{1 + \frac{5K}{z(5z + 2)}} \frac{1}{z^{-1}} \Leftrightarrow
+                \lim_{k \to \infty} e[k] = \lim_{z \to 1} \frac{z(5z+2)}{5z^2 + 2z + 5K} \Leftrightarrow
+                \lim_{k \to \infty} e[k] = \frac{14}{19}
+            \end{equation}
+
+    \section{Ejercicio 12}
+    
+        La planta a lazo abieto puede ser expresada como 
+        
+        \begin{equation}
+            H_p(z) = \frac{4(z+2)}{10z^2 - 12z + 5}
+        \end{equation}
+
+        Si controlamos con un controlado $H_c(z)$ descripto por 
+        
+        \begin{equation}
+            H_c(z) = -K
+        \end{equation}
+
+        Suponiendo que retroalimentamos positivamente, lo cual es equivalente a retroalimentar de forma negativa utilizando el controlador 
+        
+        \begin{equation}
+            H_c(z) = K
+        \end{equation}
+
+        Tenemos que la planta mas el controlador queda expresado como 
+
+        \begin{equation}
+            H(z) = \frac{4K(z+2)}{10z^2 - 12z +5}
+        \end{equation}
+
+        El diagrama de Nyquist puede verse en la figura \ref{fig:12-nyquist}, en la cual se observan 3 intersecciones con el eje real. 
+        Para obtener dichas intersecciones veremos cuando $\arg\{H(z)\} = k\pi, k \in \mathbb{R}$. Pero antes notemos que si mutiplico y
+        divido $H(z)$ por $\bar{(z+2)}$ obtenemos 
+
+        \begin{equation}
+            H(z) = \frac{4K|z+2|^2}{(10z^2 - 12z +5)(\bar{z} + 2)}
+        \end{equation}
+
+        Este planteo nos simplificara las cuentas mas adelante, ya que para realizar el diagrama de Nyquist debemos tomar $z=e^{j\omega}$, por lo tanto 
+        $z\bar{z}=1$. Finalmente 
+
+
+        \begin{equation}
+            \arg\{ 4K \} + \arg \{ |z+2|^2\} - \arg \{ (10z^2 - 12z +5)(\bar{z} + 2) \}= k\pi
+        \end{equation}
+
+        Sabemos que el argumento de un numero positivo es nulo y el argumento de $K$ es $\pi$ cuando $K<0$ o $0$ si $K\geq0$ por lo tanto obtenemos que 
+
+
+        \begin{equation}
+            - \arg \{ (10z^2 - 12z +5)(\bar{z} + 2) \} = ( k - \mu(-K) ) \pi
+        \end{equation}
+
+        Desarrollando la expresión $(10z^2 - 12z +5)(\bar{z} + 2)$ obtenemos que 
+
+        \begin{equation}
+            (10z^2 - 12z +5)(\bar{z} + 2) = 10z^2\bar{z} + 20z^2 -12z\bar{z} - 24z + 5\bar{z} + 10 \Leftrightarrow
+            (10z^2 - 12z +5)(\bar{z} + 2) = 20z^2 - 14z + 5\bar{z} - 2
+        \end{equation}
+
+        Por lo tanto si tomamos $z=e^{j\omega}$ e igulamos la parte imaginaria a $0$, que es lo que determina cuando $\arg\{ H(z) \}$ es un 
+        multiplo de $\pi$. 
+
+        \begin{equation}
+            20\sin{ 2\omega } - 14\sin{ \omega } - 5\sin{ \omega } = 0 \Leftrightarrow
+            \sin{ \omega }( 40\cos{ \omega } - 19 ) = 0 \Leftrightarrow
+            \omega = 0 \lor \omega = \pi \lor \omega = \arccos\left( \frac{19}{40} \right)
+        \end{equation}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=.5\textwidth]{Img/12-nyquist.png}
+            \caption{Diagrama de Nyquiste de $H(z)$ para $K=1$.}
+            \label{fig:12-nyquist}
+        \end{figure}
+
+        Ahora debemos terminar el valor de $H(z)$ para los puntos determinados, lo cual es simplemente remplazar $z=e^{j\omega}$.
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|}
+                \hline $0$ & $\pi$ & $\arccos{19/40}$ \\ 
+                \hline $8K/5$ & $4K/27$ & $-8K/5$ \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+        Luego como $N=0$ para que el sistema a lazo cerrado sea estable las todas las intersecciones deben estar en la región 
+        derecha o izquierda del $-1$. Lo cual sucedera cuando 
+
+        \begin{equation}
+            \frac{8}{5}K > -1 \land \frac{4}{27}K > -1 \land -\frac{8}{5}K > -1 \Leftrightarrow
+            K > -\frac{5}{8} \land K > -\frac{4}{27} \land K < \frac{5}{8}
+        \end{equation}
+        
+        Como en este caso si plantemos $<$ en vez de $>$ la solución es vacío solo se desarrollo en el caso de interes. 
+        Por lo tanto el sistema resulta estable cuando $K \in (-4/27;5/8)$, si tomamos $K>0$ entonces $K \in( 0 ; 5/8 )$.
+        Con la finalidad de comprobar el planteo se muestra en la figura \ref{fig:12-rlocus} el lugar de las raíces.
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=.5\textwidth]{Img/12-rlocus.png}
+            \caption{Lugar de las raíces de $H(z)$}
+            \label{fig:12-rlocus}
+        \end{figure}
+
 \end{document} 

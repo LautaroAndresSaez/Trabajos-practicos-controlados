@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.1)  12 SEP 2020 00:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.1)  13 SEP 2020 01:44
 entering extended mode
 **/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex
 (/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex
@@ -73,7 +73,16 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-) (/usr/local/share/miktex-texmf/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/share/miktex-texmf/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+) (/usr/local/share/miktex-texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/share/miktex-texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/share/miktex-texmf/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/share/miktex-texmf/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks20
 \pgfutil@tempdima=\dimen144
 \pgfutil@tempdimb=\dimen145
@@ -383,20 +392,20 @@ LaTeX Warning: Label `' multiply defined.
 )
 \openout1 = `TP-2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
  ABD: EveryShipout initializing macros (/usr/local/share/miktex-texmf/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count280
@@ -448,77 +457,101 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-[1
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+ (/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 {/home/lautaro/.miktex/texmfs/data/pdftex/config/pdftex.map}] [2] [3] [4]
 <Img/3-c.png, id=28, 433.62pt x 289.08pt>
 File: Img/3-c.png Graphic file (type png)
 <use Img/3-c.png>
-Package pdftex.def Info: Img/3-c.png  used on input line 641.
+Package pdftex.def Info: Img/3-c.png  used on input line 642.
 (pdftex.def)             Requested size: 526.376pt x 350.9612pt.
  [5] [6 <./Img/3-c.png>] [7] [8]
 <Img/7.png, id=48, 289.08pt x 289.08pt>
 File: Img/7.png Graphic file (type png)
 <use Img/7.png>
-Package pdftex.def Info: Img/7.png  used on input line 895.
+Package pdftex.def Info: Img/7.png  used on input line 896.
 (pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
 <Img/7-1.png, id=49, 289.08pt x 289.08pt>
 File: Img/7-1.png Graphic file (type png)
 <use Img/7-1.png>
-Package pdftex.def Info: Img/7-1.png  used on input line 913.
+Package pdftex.def Info: Img/7-1.png  used on input line 914.
 (pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
  [9 <./Img/7.png> <./Img/7-1.png>]
 <Img/8-a.png, id=55, 1156.32pt x 1156.32pt>
 File: Img/8-a.png Graphic file (type png)
 <use Img/8-a.png>
-Package pdftex.def Info: Img/8-a.png  used on input line 978.
+Package pdftex.def Info: Img/8-a.png  used on input line 979.
 (pdftex.def)             Requested size: 526.376pt x 526.37344pt.
 <Img/8-b-rlocus.png, id=56, 289.08pt x 289.08pt>
 File: Img/8-b-rlocus.png Graphic file (type png)
 <use Img/8-b-rlocus.png>
-Package pdftex.def Info: Img/8-b-rlocus.png  used on input line 1000.
+Package pdftex.def Info: Img/8-b-rlocus.png  used on input line 1001.
 (pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
  [10]
 <Img/8-b-nyquist.png, id=60, 289.08pt x 289.08pt>
 File: Img/8-b-nyquist.png Graphic file (type png)
 <use Img/8-b-nyquist.png>
-Package pdftex.def Info: Img/8-b-nyquist.png  used on input line 1036.
+Package pdftex.def Info: Img/8-b-nyquist.png  used on input line 1037.
 (pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
  [11 <./Img/8-a.png>]
 <Img/8-c-nyquist.png, id=65, 289.08pt x 289.08pt>
 File: Img/8-c-nyquist.png Graphic file (type png)
 <use Img/8-c-nyquist.png>
-Package pdftex.def Info: Img/8-c-nyquist.png  used on input line 1060.
+Package pdftex.def Info: Img/8-c-nyquist.png  used on input line 1061.
 (pdftex.def)             Requested size: 210.54718pt x 210.54584pt.
  [12 <./Img/8-b-rlocus.png> <./Img/8-b-nyquist.png>]
 <Img/9-a.png, id=71, 289.08pt x 289.08pt>
 File: Img/9-a.png Graphic file (type png)
 <use Img/9-a.png>
-Package pdftex.def Info: Img/9-a.png  used on input line 1092.
+Package pdftex.def Info: Img/9-a.png  used on input line 1093.
 (pdftex.def)             Requested size: 263.188pt x 263.19994pt.
  [13 <./Img/8-c-nyquist.png> <./Img/9-a.png>]
 <Img/9-b-nyquist.png, id=78, 289.08pt x 289.08pt>
 File: Img/9-b-nyquist.png Graphic file (type png)
 <use Img/9-b-nyquist.png>
-Package pdftex.def Info: Img/9-b-nyquist.png  used on input line 1122.
+Package pdftex.def Info: Img/9-b-nyquist.png  used on input line 1123.
 (pdftex.def)             Requested size: 263.188pt x 263.19994pt.
- [14 <./Img/9-b-nyquist.png>] (/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.aux)
+ [14 <./Img/9-b-nyquist.png>]
+<Img/11-nyquist.png, id=83, 289.08pt x 289.08pt>
+File: Img/11-nyquist.png Graphic file (type png)
+<use Img/11-nyquist.png>
+Package pdftex.def Info: Img/11-nyquist.png  used on input line 1240.
+(pdftex.def)             Requested size: 263.188pt x 263.19994pt.
+ [15] [16 <./Img/11-nyquist.png>]
+<Img/12-nyquist.png, id=92, 289.08pt x 289.08pt>
+File: Img/12-nyquist.png Graphic file (type png)
+<use Img/12-nyquist.png>
+Package pdftex.def Info: Img/12-nyquist.png  used on input line 1322.
+(pdftex.def)             Requested size: 263.188pt x 263.19994pt.
+<Img/12-rlocus.png, id=93, 289.08pt x 289.08pt>
+File: Img/12-rlocus.png Graphic file (type png)
+<use Img/12-rlocus.png>
+Package pdftex.def Info: Img/12-rlocus.png  used on input line 1352.
+(pdftex.def)             Requested size: 263.188pt x 263.19994pt.
+ [17 <./Img/12-nyquist.png>] [18 <./Img/12-rlocus.png>] (/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15218 strings out of 481226
- 324306 string characters out of 2913220
- 579347 words of memory out of 3000000
- 30521 multiletter control sequences out of 15000+200000
- 541310 words of font info for 51 fonts, out of 3000000 for 9000
+ 15748 strings out of 481226
+ 330145 string characters out of 2913220
+ 579931 words of memory out of 3000000
+ 31029 multiletter control sequences out of 15000+200000
+ 544198 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,20n,67p,463b,763s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on /home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf (14 pages, 332625 bytes).
+</usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf (18 pages, 530824 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
+ 152 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
