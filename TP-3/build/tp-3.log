@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.1)  10 OCT 2020 08:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.1)  11 OCT 2020 20:34
 entering extended mode
 **/home/lautaro/Documents/Facultad/Controlados/TP-3/tp-3.tex
 (/home/lautaro/Documents/Facultad/Controlados/TP-3/tp-3.tex
@@ -227,22 +227,28 @@ File: Img/8-c.jpg Graphic file (type jpg)
 <use Img/8-c.jpg>
 Package pdftex.def Info: Img/8-c.jpg  used on input line 824.
 (pdftex.def)             Requested size: 469.47046pt x 234.73688pt.
- [10 <./Img/7-c.jpg>] [11 <./Img/8-c.jpg>] [12] [13] [14] (/home/lautaro/Documents/Facultad/Controlados/TP-3/build/tp-3.aux
+ [10 <./Img/7-c.jpg>] [11 <./Img/8-c.jpg>] [12] [13]
+<Img/11-c-d.jpg, id=64, 867.24pt x 289.08pt>
+File: Img/11-c-d.jpg Graphic file (type jpg)
+<use Img/11-c-d.jpg>
+Package pdftex.def Info: Img/11-c-d.jpg  used on input line 1210.
+(pdftex.def)             Requested size: 469.47046pt x 156.49344pt.
+ [14] [15 <./Img/11-c-d.jpg>] (/home/lautaro/Documents/Facultad/Controlados/TP-3/build/tp-3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 3560 strings out of 481226
- 47142 string characters out of 2913220
- 309198 words of memory out of 3000000
- 19105 multiletter control sequences out of 15000+200000
+ 3568 strings out of 481226
+ 47257 string characters out of 2913220
+ 309207 words of memory out of 3000000
+ 19112 multiletter control sequences out of 15000+200000
  544455 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,13n,35p,291b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,13n,35p,326b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /home/lautaro/Documents/Facultad/Controlados/TP-3/build/tp-3.pdf (14 pages, 589912 bytes).
+Output written on /home/lautaro/Documents/Facultad/Controlados/TP-3/build/tp-3.pdf (15 pages, 695824 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
+ 115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

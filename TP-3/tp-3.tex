@@ -136,7 +136,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=.5\textwidth]{Img/1-d.jpg}
-        \caption{}
+        \caption{Representación de los estados del sistema con respecto a $k$.}
         \label{fig:1-d}
     \end{figure}
 
@@ -351,7 +351,7 @@
         \begin{figure}
             \centering 
             \includegraphics[width=.5\textwidth]{Img/3-b.jpg}
-            \caption{Representación de $(x_1;x_2)$.}
+            \caption{Representación de $(x_1;x_2)$ luego de $2$ pasos.}
             \label{fig:3-b}
         \end{figure} 
 
@@ -1003,7 +1003,8 @@
             \Leftrightarrow
             \Psi = 
             \begin{pmatrix}
-                a \\ a^{-1}h -1
+                a - ha^{-1}e^{-1/4} + e^{-1/4} 
+                \\ a^{-1}h -1
             \end{pmatrix}
         \end{equation}
 
@@ -1020,7 +1021,7 @@
             \end{pmatrix}
             +
             \begin{pmatrix}
-                a \\ a^{-1}h - 1
+                a - ha^{-1}e^{-1/4} + e^{-1/4}  \\ a^{-1}h - 1
             \end{pmatrix}
             u[k-1]
         \end{equation}
@@ -1072,14 +1073,40 @@
         [I - KC][ \Phi \hat{x}[k-1|k-1] + \Gamma u[k-1] ] + Ky[k]
     \end{equation}
 
-    Entonces
+    También sabemos que los polos del observador estan determinados por 
 
     \begin{equation}
-        I - KC = \begin{bmatrix}
-            1 - K_1 & 0 \\
-            -K_2 & 1 \\
-        \end{bmatrix}
+        P(\lambda) = | \lambda I - \Phi - KC\Phi |
     \end{equation}
+
+    Entonces $P(\lambda)$ esta expresado por 
+    
+    \begin{equation}
+        P(\lambda) = \lambda^2 - ( e^{-1/4} - K_1a + 1- K_2 )\lambda + (1-K_2)(e^{-1/4} - K_1a ) + K_1( a - K_2 a )
+    \end{equation}
+
+    Si ubicamos los polos en $0$ entonces surge el siguiente sistema de ecuaciones
+
+    \begin{equation}
+        \siseq{
+            e^{-1/4} - K_1a + 1- K_2 = 0 \\ 
+            (1-K_2)(e^{-1/4} - K_1a ) + K_1( a - K_2 a ) \\ 
+        } \Leftrightarrow
+        \siseq{
+            K_1 = \frac{e^{-1/4} + 1 - K_2 }{a} \\ 
+            e^{-1/4} - K_2 e^{-1/4} = 0
+        }
+    \end{equation}
+
+    Despejando obtenemos 
+
+    \begin{equation}
+        \siseq{
+            K_1 = \frac{1}{e^{1/4}-1} \\ 
+            K_2 = 1
+        }
+    \end{equation}
+
 
     \section*{Ejercicio 11}
 
@@ -1142,7 +1169,7 @@
         \Phi_o = 
         \begin{bmatrix}
             0 & 1 \\
-            \frac{9}{20} & \frac{2}{5}
+            -\frac{1}{4} & \frac{9}{5}
         \end{bmatrix}
         -
         \begin{pmatrix}
@@ -1152,24 +1179,37 @@
             1 & 0
         \end{pmatrix} = 
         \begin{bmatrix}
-            -K_1 & -1 \\
-            \frac{9}{20} - K_2 & \frac{2}{5}
+            -K_1 & 1 \\
+            -\frac{1}{4} - K_2 & \frac{9}{5}
         \end{bmatrix}
     \end{equation}
 
     Cuyo polinomio caracteristico esta dado por 
 
     \begin{equation}
-        P(\lambda) = \lambda^2 + \left( K_1 - \frac{2}{5} \right) \lambda - \frac{2}{5}K_1 + K_2 - \frac{9}{20}
+        P(\lambda) = \lambda^2 + \left( K_1 - \frac{9}{5} \right) \lambda - \frac{9}{5}K_1 + K_2 + \frac{1}{4}
     \end{equation}
 
     Si los polos del observador deben estar en el origen entonces 
 
     \begin{equation}
         \siseq{
-            K_1 = \frac{2}{5} \\ 
-            K_2 = 0.61
+            K_1 = \frac{9}{5} \\ 
+            K_2 = 2.99
         }
     \end{equation}
+
+    \subsection*{c) y d)}
+
+    En la Figura \ref{fig:11} observamos los valores para la salida, en el caso de que sea posible medir $X$ y en el caso 
+    de que se necesite estimar $X$ utilizando el observador calculado en b). Por otro lado se observan las variaciones de 
+    $x_1$ y $x_2$ en los distintos instantes de tiempo.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{Img/11-c-d.jpg}
+        \caption{Representación de la salida con retroalimentación para los casos en que se pueda medir $X$ y con la implementación del observador dinamico.}
+        \label{fig:11}
+    \end{figure}
 
 \end{document}

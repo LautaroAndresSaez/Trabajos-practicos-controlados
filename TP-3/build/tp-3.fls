@@ -130,6 +130,11 @@ INPUT ./Img/8-c.jpg
 INPUT ./Img/8-c.jpg
 INPUT ./Img/8-c.jpg
 INPUT ./Img/8-c.jpg
+INPUT Img/11-c-d.jpg
+INPUT ./Img/11-c-d.jpg
+INPUT ./Img/11-c-d.jpg
+INPUT ./Img/11-c-d.jpg
+INPUT ./Img/11-c-d.jpg
 INPUT /home/lautaro/Documents/Facultad/Controlados/TP-3/build/tp-3.aux
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb

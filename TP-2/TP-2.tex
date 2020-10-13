@@ -819,7 +819,7 @@
             Por lo tanto la tranferencia total del sistema retroalimentamo es 
 
             \begin{equation}
-                H(z) = \frac{K}{z^{n_0+1} - z^{n_0} + K }
+                H(z) = \frac{Kh}{z^{n_0+1} - z^{n_0} + Kh }
             \end{equation}
 
             \subsection{a)}
@@ -831,29 +831,29 @@
                     En este caso el ecuacion caracterisca del sistema esta dada por 
 
                     \begin{equation}
-                        P(\lambda) = \lambda + ( K -1 )
+                        P(\lambda) = \lambda + ( Kh -1 )
                     \end{equation}
 
                     Donde el polo esta dado por la ecuacion 
 
                     \begin{equation}
-                        p = 1 - K
+                        p = 1 - Kh
                     \end{equation}
 
                     Para un sistema discreto la estabilidad esta dada cuando $|p|<1$, por lo tanto 
 
                     \begin{equation}
-                        |1 - K| < 1
+                        |1 - Kh| < 1
                     \end{equation}
 
-                    Por lo cual obtenemos que $K \in ( 0 ; 2 )$
+                    Por lo cual obtenemos que $K \in ( 0 ; 2/h )$
 
                 \subsubsection{$n_0=1$}
 
                     En este caso el retardo es unitario por lo tanto el polinomio caracteristo esta dado por 
 
                     \begin{equation}
-                        P(\lambda) = \lambda^2 - \lambda + K
+                        P(\lambda) = \lambda^2 - \lambda + Kh
                     \end{equation}
 
                     En este caso para calcular cuando el sistema es estable aplicaremos el criterio de Jury
@@ -861,14 +861,14 @@
                     \begin{table}[H]
                         \centering
                         \begin{tabular}{|c|c|c|}
-                            \hline $1$ & $-1$ & $K$ \\
-                            \hline $1-K^2$ & $K+1$ & 0 \\
-                            \hline $\frac{(1+K)[ 1 - (K-1)^2 ]}{K-1}$ & 0 & 0\\
+                            \hline $1$ & $-1$ & $Kh$ \\
+                            \hline $1-(Kh)^2$ & $Kh+1$ & 0 \\
+                            \hline $\frac{(1+Kh)[ 1 - (Kh-1)^2 ]}{Kh-1}$ & 0 & 0\\
                             \hline
                         \end{tabular}
                     \end{table}
 
-                    Por lo que obtenemos que $K \in (0;1)$
+                    Por lo que obtenemos que $K \in (0;1/h)$
 
 
                 Es posible observar que en el segundo caso el rango de $K$ disminuye.
@@ -1048,7 +1048,7 @@
         \end{equation}
 
         Los polos del sistema a lazo abierto estan ubicados en $z \in \{ -1 \pm \sqrt{2}  \}$, luego $P_0=1$, por lo 
-        tanto necesitaremos que $N=-1$. De la figura \ref{fig:8-c-nyquist} podemos observar que $N=1$ por lo tanto si 
+        tanto necesitaremos que $N=1$. De la figura \ref{fig:8-c-nyquist} podemos observar que $N=1$ por lo tanto si 
         cerramos el lazo con $K=1$ el sistema tendra 2 polos fuera del circulo unitario. Tambien es posible determinar 
         que $H(1) = 2K$ y $H(-1)=-2K$, por lo tanto siempre encerraremos al valor $(-1;0)$ si $|K|>1/2$ con el mismo sentido 
         por lo tanto el sistema no es estable para ningun $K \notin (-1/2 ; 1/2)$. Ahora solo nos falta analizar que 

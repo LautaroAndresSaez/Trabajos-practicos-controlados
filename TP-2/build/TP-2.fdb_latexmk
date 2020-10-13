@@ -1,12 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1599972259 "/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex" "/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf" "TP-2" 1599972260
+["pdflatex"] 1600285839 "/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex" "/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf" "TP-2" 1600285841
   "/home/lautaro/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1596287302 10044119 c59ca949ea67205a9537b390ff08eff2 ""
   "/home/lautaro/.miktex/texmfs/data/pdftex/config/pdftex.map" 1598895878 82686 2381c3433487640bf26aa76a10db7eb2 ""
   "/home/lautaro/.miktex/texmfs/install/tex/latex/float/float.sty" 1598895877 6916 f35860e0302c70cb81cb70b0a7937693 ""
   "/home/lautaro/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg" 1597246439 1104 d237cad3f14be9fd91fe1f904d051a01 ""
   "/home/lautaro/.miktex/texmfs/install/tex/latex/geometry/geometry.sty" 1597246439 42759 e63af52ccddba7489ac0e17d6a3344bd ""
-  "/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex" 1599972106 47492 313a1802cd79514f3752a2eb324e1fca ""
-  "/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.aux" 1599972260 5954 875c7f70f9749ae7fd97ab222a3082bc ""
+  "/home/lautaro/Documents/Facultad/Controlados/TP-2/TP-2.tex" 1600285838 47509 f57f34f46730f7fea4d5be7ad959f987 ""
+  "/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.aux" 1600285841 5954 875c7f70f9749ae7fd97ab222a3082bc ""
   "/usr/local/share/miktex-texmf/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1596286879 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/share/miktex-texmf/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1596286879 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/share/miktex-texmf/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1596286879 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -160,11 +160,11 @@
   "Img/8-c-nyquist.png" 1599972180 25072 0db29f04bc173b306637a6f82d222972 ""
   "Img/9-a.png" 1599972182 26385 21049def04af8c66ee679b7eb8f59adf ""
   "Img/9-b-nyquist.png" 1599972183 23849 d48edccbe19dbc3ad42464f13979b346 ""
-  "TP-2.tex" 1599972106 47492 313a1802cd79514f3752a2eb324e1fca ""
-  "build/TP-2.aux" 1599972260 5954 875c7f70f9749ae7fd97ab222a3082bc "pdflatex"
+  "TP-2.tex" 1600285838 47509 f57f34f46730f7fea4d5be7ad959f987 ""
+  "build/TP-2.aux" 1600285841 5954 875c7f70f9749ae7fd97ab222a3082bc "pdflatex"
   (generated)
-  "/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf"
-  "build/TP-2.pdf"
+  "build/TP-2.log"
   "/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.log"
   "build/TP-2.aux"
-  "build/TP-2.log"
+  "build/TP-2.pdf"
+  "/home/lautaro/Documents/Facultad/Controlados/TP-2/build/TP-2.pdf"
